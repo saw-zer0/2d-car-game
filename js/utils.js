@@ -7,20 +7,18 @@ class Store {
     static getData() {
         let data;
         if (localStorage.getItem(`data`) === null) {
-            data = [];
+            data = {'high-score': 0};
         } else {
-            data = JSON.parse(localStorage.getItem(`data}`));
+            data = JSON.parse(localStorage.getItem(`data`));
         }
         return data;
     }
 
     static addData(newData) {
         const datas = Store.getData();
-        console.log(datas)
         datas['high-score'] = newData;
         localStorage.setItem(`data`, JSON.stringify(datas));
     }
 
 
 }
-Store.addData(34);

@@ -81,6 +81,7 @@ class CarGame {
         messageElement.style.display = 'block';
         this.scoremanager();
         document.getElementById('score').innerText = this.score;
+        document.getElementById('high-score').innerText = Store.getData()['high-score'];
         document.getElementById('restart-btn').addEventListener('click', () => {
             messageElement.style.display = 'none';
             document.getElementById('start-menu').style.display = 'block';
@@ -92,7 +93,7 @@ class CarGame {
     scoremanager(){
         let prevScore = Store.getData();
         console.log(prevScore)
-        if(this.score > prevScore){
+        if(this.score > prevScore['high-score']){
             Store.addData(this.score);
         }
     };
