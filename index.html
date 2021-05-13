@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Game</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/layout.css">
+    <link rel="stylesheet" href="./css/style.css">
+
+    <script src="./js/utils.js" defer></script>
+    <script src="./js/car game.js" defer></script>
+    <script src="./js/index.js" defer></script>
+</head>
+
+<body>
+    <canvas id="canvas"></canvas>
+
+    <div id="start-menu" class="menu">
+        <button id="start-btn" class="menu-btn">Start</button>
+        <p id="start-message">Press keys
+            <span><img src="./assets/keyboard_key_a.png" alt="A"></span>
+            to go left <br>
+            <span><img src="./assets/keyboard_key_d.png" alt="D"></span>
+            to go right <br>
+            <span class="danger-text">TIP: DON'T CRASH</span>
+        </p>
+    </div>
+    <div id="game-over-message" class="menu">
+        <button id="restart-btn" class="menu-btn">Restart</button>
+        <p id="crashed-message">
+            <span>SCORE :  </span> <span id="score"></span><br>
+            <span class="danger-text">Press Restart to Play Again</span>
+        </p>
+    </div>
+
+</body>
+
+</html>

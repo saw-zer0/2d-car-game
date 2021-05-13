@@ -1,0 +1,12 @@
+.danger-text{
+    background-color: red;
+    padding: 3px;
+}
+
+#start-menu{
+    display: block;
+}
+
+#game-over-message{
+    display: none;
+}
