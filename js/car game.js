@@ -6,11 +6,12 @@ class CarGame {
         this.canvas.height = height;
         this.ctx = this.canvas.getContext('2d');
         this.init();
-        this.speed = 3;
-        this.level = 5;
+
     }
 
     init() {
+        this.speed = 3;
+        this.level = 5;
         this.score = 0;
         this.laneArr = [];
         this.bgImg = new Image();
@@ -245,5 +246,35 @@ class Lanes {
     updateLane(dy) {
         this.drawLane();
         this.moveLane(dy);
+    }
+}
+
+
+class Bullets{
+    constructor(ctx, x, y = 540, dy = -10){
+        this.ctx = ctx;
+        this.x = x;
+        this.y = y;
+        this.dy = dy;
+    }
+
+    drawBullet(){
+        this.ctx.fillStyle = '#b87333';
+        this.ctx.beginPath();
+        this.ctx.arc(this.x, this.y, 10, 0, 2* Math.PI);
+        this.ctx.closePath();
+    }
+
+    moveBullet(){
+        this.y += this.dy;
+    }
+
+    updateBullet(){
+        this.drawBullet();
+        this.updateBullet();
+    }
+
+    checkCollision(carsArr){
+        
     }
 }
